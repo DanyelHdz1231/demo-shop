@@ -2,6 +2,14 @@
   padding: 20px 16px 96px;
 }
 
+.weekly-best {
+  margin-bottom: 14px;
+}
+
+.weekly-best .section-head {
+  margin-bottom: 10px;
+}
+
 .hero-header {
   padding: 20px;
   border-radius: 24px;
@@ -155,6 +163,18 @@ main {
   font-weight: 500;
 }
 
+.stock-warning {
+  margin-top: 6px;
+  color: #9a2607;
+  background: #ffe4dc;
+  border: 1px solid #ffc8ba;
+  border-radius: 999px;
+  width: fit-content;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .actions {
   display: grid;
   gap: 8px;
@@ -213,10 +233,12 @@ main {
   background: #1f8f43;
   color: #fff;
   border-radius: 999px;
-  padding: 12px 18px;
+  padding: 13px 18px;
   text-decoration: none;
   font-weight: 700;
+  border: 2px solid #d7ffdf;
   box-shadow: 0 14px 20px -14px rgba(6, 49, 21, 0.95);
+  z-index: 50;
 }
 
 .floating-wa:hover {

@@ -11,6 +11,7 @@ const products = [
     size: 'M',
     category: 'sudaderas',
     top: true,
+    lowStock: true,
     description: 'Interior afelpado, fit relajado y tela premium para uso diario.',
     image:
       'https://images.pexels.com/photos/6311604/pexels-photo-6311604.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -22,6 +23,7 @@ const products = [
     size: 'L',
     category: 'playeras',
     top: true,
+    lowStock: false,
     description: 'Corte amplio, caida suave y color neutro facil de combinar.',
     image:
       'https://images.pexels.com/photos/9558713/pexels-photo-9558713.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -33,6 +35,7 @@ const products = [
     size: 'S',
     category: 'vestidos',
     top: false,
+    lowStock: true,
     description: 'Tela fresca y silueta fluida ideal para clima calido.',
     image:
       'https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -44,6 +47,7 @@ const products = [
     size: 'S',
     category: 'sudaderas',
     top: true,
+    lowStock: true,
     description: 'Corte corto con gorro amplio y punos reforzados.',
     image:
       'https://images.pexels.com/photos/9558601/pexels-photo-9558601.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -55,6 +59,7 @@ const products = [
     size: 'M',
     category: 'playeras',
     top: false,
+    lowStock: false,
     description: 'Algodon peinado de alto gramaje para mayor durabilidad.',
     image:
       'https://images.pexels.com/photos/9558770/pexels-photo-9558770.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -66,6 +71,7 @@ const products = [
     size: 'M',
     category: 'vestidos',
     top: false,
+    lowStock: true,
     description: 'Diseno minimalista con caida elegante para eventos.',
     image:
       'https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -101,8 +107,26 @@ function App() {
 
   return (
     <div className="page-shell">
+      <section className="weekly-best" aria-labelledby="weekly-best-title">
+        <div className="section-head">
+          <h2 id="weekly-best-title">Mas vendidos de la semana</h2>
+          <p>3 productos destacados</p>
+        </div>
+        <div className="top-strip">
+          {topProducts.slice(0, 3).map((product) => (
+            <article key={product.id} className="top-card">
+              <img src={product.image} alt={product.name} loading="lazy" />
+              <div>
+                <h3>{product.name}</h3>
+                <p>${product.price}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <header className="hero-header">
-        <p className="kicker">Tienda demo</p>
+        <p className="kicker">Nube Moda Studio</p>
         <h1>Compra en 3 clics y cierra por WhatsApp</h1>
         <p className="hero-copy">
           Selecciona producto, revisa talla y manda mensaje listo. Sin carrito,
@@ -114,24 +138,6 @@ function App() {
       </header>
 
       <main>
-        <section className="top-products" aria-labelledby="top-title">
-          <div className="section-head">
-            <h2 id="top-title">Top productos</h2>
-            <p>Los mas pedidos esta semana</p>
-          </div>
-          <div className="top-strip">
-            {topProducts.map((product) => (
-              <article key={product.id} className="top-card">
-                <img src={product.image} alt={product.name} loading="lazy" />
-                <div>
-                  <h3>{product.name}</h3>
-                  <p>${product.price}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section id="catalogo" className="catalog-section" aria-labelledby="catalog-title">
           <div className="section-head">
             <h2 id="catalog-title">Catalogo</h2>
@@ -161,6 +167,9 @@ function App() {
                   <h3>{product.name}</h3>
                   <p className="price">${product.price}</p>
                   <p className="size">Talla {product.size}</p>
+                  {product.lowStock && (
+                    <p className="stock-warning">Quedan pocas unidades</p>
+                  )}
                   <div className="actions">
                     <a
                       className="whatsapp-btn"
@@ -168,7 +177,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Pedir por WhatsApp
+                      Pedir por WhatsApp en 1 click
                     </a>
                     <button
                       type="button"
@@ -193,13 +202,16 @@ function App() {
             <p className="detail-meta">
               Talla {selectedProduct.size} | ${selectedProduct.price}
             </p>
+            {selectedProduct.lowStock && (
+              <p className="stock-warning">Quedan pocas unidades</p>
+            )}
             <a
               className="cta-main"
               href={buildWhatsAppUrl(selectedProduct)}
               target="_blank"
               rel="noreferrer"
             >
-              Pedir este producto
+              Pedir por WhatsApp en 1 click
             </a>
           </div>
         </section>
