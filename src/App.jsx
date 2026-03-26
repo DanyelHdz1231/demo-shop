@@ -6,8 +6,8 @@ const WHATSAPP_PHONE = '5212361178257'
 const products = [
   {
     id: 1,
-    name: 'Sudadera Essentials Negra',
-    price: 350,
+    name: 'Sudadera Basica Negra',
+    price: 429,
     size: 'M',
     category: 'sudaderas',
     top: true,
@@ -19,7 +19,7 @@ const products = [
   {
     id: 2,
     name: 'Playera Oversize Arena',
-    price: 220,
+    price: 259,
     size: 'L',
     category: 'playeras',
     top: true,
@@ -31,7 +31,7 @@ const products = [
   {
     id: 3,
     name: 'Vestido Midi Terracota',
-    price: 480,
+    price: 549,
     size: 'S',
     category: 'vestidos',
     top: false,
@@ -43,7 +43,7 @@ const products = [
   {
     id: 4,
     name: 'Sudadera Crop Beige',
-    price: 390,
+    price: 469,
     size: 'S',
     category: 'sudaderas',
     top: true,
@@ -55,7 +55,7 @@ const products = [
   {
     id: 5,
     name: 'Playera Blanca Basica',
-    price: 190,
+    price: 229,
     size: 'M',
     category: 'playeras',
     top: false,
@@ -67,7 +67,7 @@ const products = [
   {
     id: 6,
     name: 'Vestido Negro Noche',
-    price: 520,
+    price: 629,
     size: 'M',
     category: 'vestidos',
     top: false,
@@ -126,18 +126,47 @@ function App() {
       </section>
 
       <header className="hero-header">
-        <p className="kicker">Nube Moda Studio</p>
-        <h1>Compra en 3 clics y cierra por WhatsApp</h1>
+        <p className="kicker">Nube Moda Studio | Tienda de ropa casual</p>
+        <h1>Vende mas por WhatsApp sin responder lo mismo 50 veces</h1>
         <p className="hero-copy">
-          Selecciona producto, revisa talla y manda mensaje listo. Sin carrito,
-          sin pasos extra.
+          Recibe pedidos por WhatsApp con mensaje prearmado en 1 clic. Catalogo
+          listo, cero apps complejas y menos tiempo perdido en chat.
         </p>
+        <div className="promise-list" aria-label="Diferenciadores clave">
+          <p>Implementacion en 48 horas</p>
+          <p>Sin apps complicadas</p>
+          <p>Funciona con tu WhatsApp actual</p>
+        </div>
         <a href="#catalogo" className="cta-main">
-          Ver catalogo
+          Ver como recibir pedidos mas facil
         </a>
       </header>
 
       <main>
+        <section className="how-it-works" aria-labelledby="how-title">
+          <div className="section-head">
+            <h2 id="how-title">Como funciona</h2>
+            <p>Sin curva tecnica. Solo 3 pasos.</p>
+          </div>
+          <div className="steps-grid">
+            <article className="step-card">
+              <span>1</span>
+              <h3>Cliente entra al catalogo</h3>
+              <p>Ve productos, precios y tallas desde su celular.</p>
+            </article>
+            <article className="step-card">
+              <span>2</span>
+              <h3>Elige producto</h3>
+              <p>Toca el boton y no tiene que escribir desde cero.</p>
+            </article>
+            <article className="step-card">
+              <span>3</span>
+              <h3>Te llega mensaje listo</h3>
+              <p>Recibes pedido directo en WhatsApp y cierras mas rapido.</p>
+            </article>
+          </div>
+        </section>
+
         <section id="catalogo" className="catalog-section" aria-labelledby="catalog-title">
           <div className="section-head">
             <h2 id="catalog-title">Catalogo</h2>

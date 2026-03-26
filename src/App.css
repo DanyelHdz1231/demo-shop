@@ -29,7 +29,24 @@
 
 .hero-copy {
   max-width: 54ch;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+}
+
+.promise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+}
+
+.promise-list p {
+  margin: 0;
+  border-radius: 999px;
+  border: 1px solid #e4b38e;
+  background: #fff5ec;
+  padding: 6px 12px;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .cta-main {
@@ -53,6 +70,47 @@ main {
   display: grid;
   gap: 28px;
   margin-top: 26px;
+}
+
+.how-it-works {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff9f3;
+  padding: 16px;
+}
+
+.steps-grid {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.step-card span {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.step-card h3 {
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.step-card p {
+  margin-top: 6px;
 }
 
 .section-head p {
@@ -267,6 +325,10 @@ main {
 
   .catalog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .product-detail {
